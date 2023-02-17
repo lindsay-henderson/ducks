@@ -52,6 +52,19 @@ function AddClient(props) {
 						required
 					/>
 				</div>
+        <div className="form-group mb-3">
+					<label htmlFor="social-input" className="form-label">
+						Social Media
+					</label>
+					<input 
+						type="text"
+						className="form-control"
+						id="social-input"
+						name="social"
+            value={formData.social}
+            onChange={handleChange}
+					/>
+				</div>
 				<div className="d-grid">
 					<button
 						type="submit"
