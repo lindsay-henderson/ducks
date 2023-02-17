@@ -6,6 +6,8 @@ import './App.css'
 //--pages
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
+import Landing from './pages/Landing/Landing'
+import AddClient from './pages/AddClient/AddClient'
 
 //--- components
 import NavBar from './components/NavBar/NavBar'
@@ -24,6 +26,7 @@ const App = () => {
     <NavBar/>
     <main>
     <Routes>
+    <Route path="/" element={<Landing user={user} />} />
     <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
@@ -31,6 +34,10 @@ const App = () => {
         <Route
           path="/login"
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
+        />
+        <Route 
+        path="/add-client"
+        element={<AddClient/>}
         />
         </Routes>
 </main>
