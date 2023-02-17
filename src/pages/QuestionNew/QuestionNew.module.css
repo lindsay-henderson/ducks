@@ -1,0 +1,41 @@
+.container {
+  height: 100%;
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 28px 21px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container input, textarea { 
+  width: 100%;
+  padding: 14px;
+  font-size: 14px;
+  resize: vertical;
+  border-radius: 5px;
+  margin: 7px 0px 14px 0px;
+  border: 1px solid var(--border);
+  font-family: canada-type-gibson, sans-serif;
+}
+
+.container textarea {
+  min-height: 100px;
+}
+
+.container label {
+  font-weight: 600;
+  margin: 7px 0px 14px 0px;
+}
+
+.container button {
+  width: 100px;
+  height: 75%;
+  padding: 18px 18px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family:'Courier Prime', monospace;
+  color: rgb(240, 210, 189);
+  background-color: #6c757d;
+}
+
