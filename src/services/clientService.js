@@ -1,18 +1,22 @@
-// import * as tokenService from "./tokenService"
+import * as tokenService from "./tokenService"
 
 const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/clients`
 
-async function create(client) {
-  const res = await fetch(BASE_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      // 'Authorization': `Bearer ${tokenService.getToken()}`
-    },
-    body: JSON.stringify(client)
-  })
-  console.log("create")
-	return res.json()
+const create = async (client) => {
+  try{
+    const res = await fetch(BASE_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      },
+      body: JSON.stringify(client)
+    })
+    console.log("create")
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 async function getAll() {

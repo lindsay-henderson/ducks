@@ -35,8 +35,14 @@ const App = () => {
   // const handleSignupOrLogin = () => {
   //   setUser(authService.getUser())
   // }
-  const handleAddClient = newClientData => {
-    setClients([clients, newClientData])
+  // const handleAddClient = newClientData => {
+  //   setClients([clients, newClientData])
+  //   console.log("new client data")
+  // }
+
+  const handleAddClient = async newClientData => {
+    const newClient = await clientService.create(newClientData)
+    setClients([clients, newClient])
     console.log("new client data")
   }
 
