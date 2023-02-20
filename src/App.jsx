@@ -36,7 +36,8 @@ const App = () => {
   //   setUser(authService.getUser())
   // }
   const handleAddClient = newClientData => {
-    setClients([...clients, newClientData])
+    setClients([clients, newClientData])
+    console.log("new client data")
   }
 
   return (

@@ -1,4 +1,4 @@
-import * as tokenService from "./tokenService"
+// import * as tokenService from "./tokenService"
 
 const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/clients`
 
@@ -7,10 +7,11 @@ async function create(client) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${tokenService.getToken()}`
+      // 'Authorization': `Bearer ${tokenService.getToken()}`
     },
     body: JSON.stringify(client)
   })
+  console.log("create")
 	return res.json()
 }
 
