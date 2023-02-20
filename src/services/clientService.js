@@ -12,7 +12,7 @@ const create = async (client) => {
       },
       body: JSON.stringify(client)
     })
-    console.log("create")
+    console.log(res, "client service response")
     return res.json()
   } catch (error) {
     console.log(error)
