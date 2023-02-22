@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import AddClient from './pages/AddClient/AddClient'
+import * as clientService from './services/clientService'
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import'./App.css'
@@ -11,8 +12,9 @@ const App = () => {
   const [user, setUser] = useState(null)
   const [clients, setClients] = useState([])
 
-  const handleAddClient = newClientData => {
-    setClients([...clients, newClientData])
+  const handleAddClient = async newClientData => {
+    const newClient = await clientService.create(newClientData)
+    setClients([...clients, newClient])
   }
 
   return (
